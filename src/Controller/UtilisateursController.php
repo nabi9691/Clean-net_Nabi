@@ -72,7 +72,7 @@ class UtilisateursController extends AbstractController
     public function nouvelUtilisateur(Request $request): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -114,7 +114,9 @@ class UtilisateursController extends AbstractController
      */
     public function modifierUtilisateur(Request $request, Utilisateurs $utilisateurs): Response
     {
-        $form = $this->createForm(RegistrationFormEditType::class, $utilisateurs);
+        $utilisateurs = new Utilisateurs();
+
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

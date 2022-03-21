@@ -21,14 +21,13 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 // use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
-
-
 class UtilisateursFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-                    
+        
+        
         
         ->add('nom', TextType::class, [
             'label' => 'Votre nom',
@@ -39,9 +38,15 @@ class UtilisateursFormType extends AbstractType
             'label' => 'Votre prénom',
             'required' => false
         ])
-        
+        ->add('civilite', ChoiceType::class, [
+            'label' => 'Votre civilité',
+            'required' => false,
+            'choices' => ["Mme" => "Mme", "Mlle" => "Mlle", "M." => "M."],
+            'multiple' => false,
+        ])
+
         ->add('date', BirthdayType::class, [
-            'label' => 'Date Naissance',
+            'label' => 'Date de Naissance :',
             'required' => false,
             'widget' => 'single_text'
         ])
@@ -61,7 +66,7 @@ class UtilisateursFormType extends AbstractType
                 'label' => 'Adresse :',
                 'required' => false
             ])
-            ->add('code_postal', TextType::class, [
+            ->add('codePostal', TextType::class, [
                 'label' => 'Code_Postal :',
                 'required' => false
             ])
@@ -69,7 +74,7 @@ class UtilisateursFormType extends AbstractType
                 'label' => 'Ville :',
                 'required' => false
             ])
-            ->add('departement', TextType::class, [
+            ->add('departements', TextType::class, [
                 'label' => 'Département :',
                 'required' => false
             ])

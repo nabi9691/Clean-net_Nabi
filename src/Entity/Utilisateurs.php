@@ -56,7 +56,7 @@ class Utilisateurs
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $code_postal;
+    private $codePostal;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -189,14 +189,14 @@ class Utilisateurs
         return $this;
     }
 
-    public function getCode_postal(): ?string
+    public function getCodePostal(): ?string
     {
-        return $this->code_postal;
+        return $this->codePostal;
     }
 
-    public function setCode_postal(string $code_postal): self
+    public function setCodePostal(string $codePostal): self
     {
-        $this->code_postal = $code_postal;
+        $this->codePostal = $codePostal;
 
         return $this;
     }
@@ -279,6 +279,7 @@ class Utilisateurs
     }
 
     public function setImageName(string $imageName): self
+
     {
         $this->imageName = $imageName;
 
