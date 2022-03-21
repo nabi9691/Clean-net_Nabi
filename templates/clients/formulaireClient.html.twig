@@ -1,0 +1,16 @@
+
+    
+{{ form_start(formClients) }}
+
+Nom du client: {{ form_widget(formClients.nom_client) }}<br>
+Status: {{ form_widget(formClients.status) }} <br>
+Date: {{ form_widget(formClients.date) }} <br>
+Service: {{ form_widget(formClients.service) }} <br>
+Facture: {{ form_widget(formClients.facture) }} <br>
+
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formClients) }}

@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Liste des utilisateurs!
+{% endblock %}
+
+{% block body %}
+
+<br/>
+
+
+{% block content %}
+	<div class="container">
+
+
+<a href="{{ path('nouvelUtilisateur_index') }}">Nouvelle utilisateur</a>
+
+<br/><br/>
+		<h1>
+			Liste des utilisateurs :
+		</h1>
+		<br/><br/>
+		<hr/>
+		<br/>
+
+		<table border="1">
+					<thead>
+
+<tr>
+<th> Id </th>
+<th> Nom </th>
+<th> Prénom </th>
+<th> Date de naissance </th>
+<th> Téléphone </th>
+<th> Fax : </th>
+<th> Email </th>
+<th> Adresse /th>
+<th> Code Postal </th>
+<th> Villes </th>
+<th> Départements </th>
+<th> Pays </th>
+<th> Status </th>
+<th> Civilité </th>
+<th> Role </th>
+<th> Image </th>
+<th>Modifier</th>
+							<th>Afficher</th>
+							<th>Supprimer</th>
+</tr>
+					</thead>
+					<tbody>
+{% for utilisateur in utilisateur %}
+<tr>
+<td>{{ utilisateur.id }}</td>
+<td>{{ utilisateur.nom }}</td>
+<td>{{ utilisateur.prenom }}</td>
+<td>{{ utilisateur.date|date("d/m/Y") }}</td>
+<td>{{ utilisateur.telephone }}</td>
+<td>{{ utilisateur.fax   }}</td>
+<td>{{ utilisateur.email  }}</td>
+<td>{{ utilisateur.adresse  }}</td>
+<td>{{ utilisateur.code_postal  }}</td>
+<td>{{ utilisateur.villes  }}</td>
+<td>{{ utilisateur.departements }}</td>
+<td>{{ utilisateur.pays }}</td>
+<td>{{ utilisateur.status }}</td>
+<td>{{ utilisateur.civilite }}</td>
+<td>{{ utilisateur.role }}</td>
+<td>{{ utilisateur.imageName }}</td>
+
+<td><a href="{{ path('modifierUtilisateur_index', {'id': utilisateur.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherUtilisateur_index', {'id': utilisateur.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerUtilisateur_index', {'id': utilisateur.id }) }}">Supprimer</a></td>
+</tr>
+
+					{% else %}
+						<tr>
+							<td>
+								Vous n'avez pas d'enregistrement!
+							</td>
+						</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+		{% endblock %}
+
+		<br/><br/>
+
+
+	{% endblock %}

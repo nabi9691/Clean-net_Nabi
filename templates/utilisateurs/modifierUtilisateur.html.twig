@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Modifier un utilisateur :
+{% endblock %}
+
+{% block content %}
+    
+    
+    <h1>
+        Modifier un utilisateur :
+        </h1>
+
+{{ form_start(formUtilisateur) }}
+
+Nom: {{ form_widget(formUtilisateur.nom) }}<br>
+Prénom: {{ form_widget(formUtilisateur.prenom) }} <br>
+Civilité: {{ form_widget(formUtilisateur.civilite) }} <br>
+Datedenaissance: {{ form_widget(formUtilisateur.dateNaiss) }} <br>
+
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formUtilisateur) }}
+
+
+
+
+
+    {% endblock %}

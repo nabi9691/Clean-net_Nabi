@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+ Enregistrement d'un client
+ {% endblock %}
+
+{% block content %}
+ <br> <br>
+ 
+    <h1> Enregistrement d'un client : </h1>
+
+    {{ include('clients/formulaireClient.html.twig') }}<br>
+
+    <a href="{{ path('client_index') }}">Liste des client </a><br>
+
+
+{% endblock %}

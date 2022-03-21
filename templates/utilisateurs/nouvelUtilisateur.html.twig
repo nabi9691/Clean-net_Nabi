@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+ Enregistrement d'un Utilisateurs
+ {% endblock %}
+
+{% block content %}
+ <br> <br>
+ 
+    <h1> Enregistrement d'un utilisateurs </h1>
+
+    {{ include('utilisateurs/formulaireUtilisateur.html.twig') }}<br>
+
+    <a href="{{ path('utilisateur_index') }}">Liste des Utilisateurs</a><br>
+
+
+{% endblock %}

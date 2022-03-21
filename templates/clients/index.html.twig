@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Liste des clients !
+{% endblock %}
+
+{% block body %}
+
+<br/>
+
+
+{% block content %}
+	<div class="container">
+
+
+<a href="{{ path('nouveauClient_index') }}">Nouveau client </a>
+
+<br/><br/>
+		<h1>
+			Liste des clients :
+		</h1>
+		<br/><br/>
+		<hr/>
+		<br/>
+
+		<table border="1">
+					<thead>
+
+<tr>
+<th> Id </th>
+	<th> Nom du client </th>
+<th> Status </th>
+<th> Date </th>
+<th> Service </th>
+<th> Facture </th>
+
+<th>Modifier</th>
+							<th>Afficher</th>
+							<th>Supprimer</th>
+</tr>
+					</thead>
+					<tbody>
+{% for client in client %}
+<tr>
+<td>{{ client.id }}</td>
+<td>{{ client.nom_client }}</td>
+<td>{{ client.status }}</td>
+<td>{{ client.date|date("d/m/Y") }}</td>
+<td>{{ client.service }}</td>
+<td>{{ client.facture   }}</td>
+
+<td><a href="{{ path('modifierClient_index', {'id': client.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherClient_index', {'id': client.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerClient_index', {'id': client.id }) }}">Supprimer</a></td>
+</tr>
+
+					{% else %}
+						<tr>
+							<td>
+								Vous n'avez pas d'enregistrement!
+							</td>
+						</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+		{% endblock %}
+
+		<br/><br/>
+
+
+	{% endblock %}

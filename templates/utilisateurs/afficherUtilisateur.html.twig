@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+afficher un utilisateur :
+{% endblock %}
+
+{% block content %}
+    <h1>
+    Afficher un utilisateur :
+    </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                 <th> Date de naissance</th> 
+                 
+                 <th>Téléphone </th>
+                 <th> Fax </th> 
+                                  <th> Email </th> 
+<th>Adresse</th> 
+                 <th>Code Postal </th> 
+<th> Villes </th> 
+<th> Départements </th> 
+<th> Pays </th> 
+<th> Status </th> 
+<th> Civilité </th> 
+<th> Role </th> 
+<th> Image </th> 
+
+</tr>
+        </thead>
+        <tbody>
+            <tr>
+
+<td>{{ utilisateur.id }}</td>
+<td>{{ utilisateur.nom }}</td>
+<td>{{ utilisateur.prenom }}</td>
+<td>{{ utilisateur.date|date("d/m/Y") }}</td>
+<td>{{ utilisateur.telephone }}</td>
+<td>{{ utilisateur.fax }}</td>
+<td>{{ utilisateur.email }}</td>
+<td>{{ utilisateur.adresse }}</td>
+<td>{{ utilisateur.code_postal }}</td>
+<td>{{ utilisateur.villes }}</td>
+<td>{{ utilisateur.departements }}</td>
+<td>{{ utilisateur.pays }}</td>
+<td>{{ utilisateur.civilite }}</td>
+<td>{{ utilisateur.role }}</td>
+<td>{{ utilisateur.imageName }}</td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+    {% endblock %}

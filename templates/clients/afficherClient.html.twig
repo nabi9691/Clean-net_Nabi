@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+afficher un client :
+{% endblock %}
+
+{% block content %}
+    <h1>
+    Afficher un client :
+    </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du client </th>
+                <th> Status </th>
+<th> Date </th>
+<th> Service </th>
+<th> Facture </th>
+</tr>
+        </thead>
+        <tbody>
+            <tr>
+
+<td>{{ utilisateur.id }}</td>
+<td>{{ utilisateur.nom_client  }}</td>
+<td>{{ client.status }}</td>
+<td>{{ client.date|date("d/m/Y") }}</td>
+<td>{{ client.service }}</td>
+<td>{{ client.facture   }}</td>
+</tr>
+        </tbody>
+    </table>
+
+    {% endblock %}
